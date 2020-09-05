@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Share Tech Mono', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    background: #f2aa4cff;
+    display: flex;
+    height: 100vh;
+    width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calculator {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: #000;
+    height: 520px;
+    width: 300px;
+    box-shadow: 5px 5px 10px #000;
+    border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#display {
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    min-height: 150px;
+    text-align: right;
+    color: #fff;
+    padding: 10px;
+    font-size: 50px;
+    overflow-wrap: break-word;
 }
 
-.App-link {
-  color: #61dafb;
+#display-smaller-font {
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    min-height: 150px;
+    text-align: right;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+    overflow-wrap: break-word;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    margin: 5px;
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+    transform: scale(0.999, 0.999);
+}
+
+.numContainer {
+    width: 75%;
+    padding: 5px 5px;
+}
+
+button.numkeys {
+    background: #323232;
+    color: #fff;
+}
+
+button.zero {
+    background: #323232;
+    color: #fff;
+    width: 130px;
+    border-radius: 50px;
+}
+
+.opContainer {
+    width: 25%;
+    padding: 5px 0;
+}
+
+button.operators {
+    background: #323232;
+    color: #32cd32;
+}
+
+button.equal {
+    background: #32cd32;
+    color: #fff;
+}
+
+button.clear {
+    background: #323232;
+    color: #ff4500;
+    width: 190px;
+    border-radius: 50px;
+}
+
+button:active {
+    filter: contrast(50%);
+}
+
+footer {
+    margin: auto;
+    padding-top: 3vh;
+}
+
+footer>a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+@media (max-width:300px) {
+    .calculator {
+        height: 470px;
+        width: 260px;
+    }
+    button {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+    }
+    button.zero {
+        width: 112px;
+    }
+    button.clear {
+        width: 172px;
+    }
 }
